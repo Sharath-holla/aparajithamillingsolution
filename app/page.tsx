@@ -797,7 +797,7 @@ export default function Home() {
                 {
                   title: "Shearing & Rolling",
                   desc: "Revolutionizing the cutting process, our shearing operations significantly reduce production time. Utilizing heavy-duty rotating cylinders, we exert high pressure on metals to create uniform shapes and bend plates into precise forms.",
-                  img: "/picture2.png",
+                  img: "/Picture2.png",
                 }
               ].map((service, i) => (
                 <motion.div key={i} variants={fadeUp} className="card">
