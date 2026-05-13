@@ -412,7 +412,7 @@ export default function Home() {
       display: flex;
       flex-direction: column;
       gap: 20px;
-    }
+    }-
     @media (min-width: 768px) {
       .contact-info {
         gap: 24px;
@@ -657,7 +657,7 @@ export default function Home() {
                 </SignInButton>
               </Show>
               <Show when="signed-in">
-                <UserButton afterSignOutUrl="/" />
+                <UserButton/>
               </Show>
             </div>
           </div>
