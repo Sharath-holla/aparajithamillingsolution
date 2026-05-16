@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { SignInButton, Show, UserButton } from "@clerk/nextjs";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ChevronRight,
   Factory,
@@ -45,7 +45,7 @@ const HeroSlider = ({ images }: { images: string[] }) => {
   );
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -55,12 +55,12 @@ const fadeUp = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeInOut" as const,
+      ease: "easeInOut",
     },
   },
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   visible: {
     transition: {

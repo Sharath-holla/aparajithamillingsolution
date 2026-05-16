@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { SignInButton, Show, UserButton } from "@clerk/nextjs";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 
 export default function About() {
@@ -13,8 +13,8 @@ export default function About() {
     return () => window.removeEventListener("scroll", h);
   }, []);
 
-  const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeInOut" as const } } };
-  const d = (delay: number) => ({ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, delay, ease: "easeInOut" as const } } });
+  const fadeUp: Variants = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeInOut" } } };
+  const d = (delay: number): Variants => ({ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65, delay, ease: "easeInOut" } } });
 
   const values = [
     { icon: "⚡", title: "Innovation", text: "Harnessing cutting-edge 3D design technology to deliver smarter, more efficient milling systems." },

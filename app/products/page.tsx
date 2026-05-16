@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { SignInButton, Show, UserButton } from "@clerk/nextjs";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -68,7 +68,7 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 };
 
 export default function Products() {
-  const fadeUp = {
+  const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -78,7 +78,7 @@ export default function Products() {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeInOut" as const,
+      ease: "easeInOut",
     },
   },
 };
@@ -184,7 +184,7 @@ export default function Products() {
         "Industries Served": "Rice Mills, Dal Mills, Pulse Processing Units, Grain Handling Systems, and Agro-Processing Industries.",
         "Key Benefits": "Robust construction, reliable storage, easy maintenance, and optimized material handling performance."
       }
-    },,
+    },
 {
   title: "Spouting & Ducting Systems",
   images: [
