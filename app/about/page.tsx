@@ -28,7 +28,7 @@ export default function About() {
   ];
 
   const milestones = [
-    { year: "2008", label: "Legacy Begins", desc: "Late Mr. B. Somashekar starts his distinguished 15+ year engineering career." },
+    { year: "2004", label: "Legacy Begins", desc: "Late Mr. B. Somashekar starts his distinguished 15+ year engineering career." },
     { year: "2020", label: "500+ Projects", desc: "Over 500 Greenfield projects successfully delivered across diverse industrial sectors." },
     { year: "2026", label: "Aparajitha Founded", desc: "Established with a vision to modernise rice and dal milling with next-gen machinery." },
     { year: "Now", label: "Growing Fast", desc: "Expanding our product range and customer base across India and beyond." },
@@ -73,19 +73,17 @@ export default function About() {
     .sm{padding:110px 0 100px;position:relative;overflow:hidden;}
     .sm::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,137,123,0.1) 0%,transparent 70%);pointer-events:none;}
     .si{max-width:1100px;margin:0 auto;padding:0 24px;}
-    @media(max-width:600px){.si{padding:0 16px;}}
 
     /* HERO */
     .hbadge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(0,137,123,0.12),rgba(0,77,64,0.08));border:1px solid rgba(0,137,123,0.25);color:#00897b;font-size:0.72rem;font-weight:700;padding:6px 16px;border-radius:999px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:22px;}
     .hbdot{width:6px;height:6px;border-radius:50%;background:#00897b;animation:pdot 2s ease-in-out infinite;}
     @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.6)}}
-    .htitle{font-size:clamp(2rem,8vw,4rem);font-weight:900;letter-spacing:-0.04em;line-height:1.08;background:linear-gradient(135deg,#004d40 0%,#00897b 50%,#26a69a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:22px;}
+    .htitle{font-size:clamp(2.4rem,6vw,4rem);font-weight:900;letter-spacing:-0.04em;line-height:1.08;background:linear-gradient(135deg,#004d40 0%,#00897b 50%,#26a69a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:22px;}
     .hsub{font-size:1.1rem;line-height:1.85;color:#525252;max-width:700px;margin:0 auto 60px;}
-    @media(max-width:600px){.hsub{font-size:0.95rem;line-height:1.6;margin-bottom:40px;}}
 
     /* STATS */
     .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:72px;}
-    @media(max-width:600px){.sg{grid-template-columns:1fr;margin-bottom:48px;}}
+    @media(max-width:600px){.sg{grid-template-columns:1fr;}}
     .sc2{background:#fff;border-radius:20px;padding:28px 20px;text-align:center;border:1px solid rgba(0,137,123,0.13);box-shadow:0 6px 24px rgba(0,77,64,0.06);transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;}
     .sc2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00897b,#004d40,#26a69a);background-size:200%;animation:sbar 3s linear infinite;}
     @keyframes sbar{0%{background-position:0%}100%{background-position:200%}}
@@ -97,17 +95,14 @@ export default function About() {
     .ic{background:#fff;border-radius:24px;padding:40px 36px;margin-bottom:28px;border:1px solid rgba(0,137,123,0.1);box-shadow:0 6px 32px rgba(0,77,64,0.06);transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;}
     .ic::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#00897b,#004d40,#26a69a,#00897b);background-size:200%;animation:sbar 3s linear infinite;}
     .ic:hover{transform:translateY(-4px);box-shadow:0 20px 56px rgba(0,77,64,0.11);}
-    @media(max-width:600px){.ic{padding:28px 20px;border-radius:20px;}}
     .ich{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
     .ici{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#00897b,#004d40);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;box-shadow:0 4px 14px rgba(0,137,123,0.35);}
     .ict{font-size:1.5rem;font-weight:800;color:#004d40;letter-spacing:-0.025em;}
     .icp{color:#525252;font-size:0.97rem;line-height:1.85;}
-    @media(max-width:600px){.ict{font-size:1.3rem;} .ici{width:40px;height:40px;font-size:1.2rem;} .icp{font-size:0.9rem;line-height:1.6;}}
 
     /* VALUES GRID */
-    .vg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:4px;}
-    @media(min-width:600px){.vg{grid-template-columns:repeat(2,1fr);}}
-    @media(min-width:900px){.vg{grid-template-columns:repeat(3,1fr);}}
+    .vg{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:4px;}
+    @media(min-width:768px){.vg{grid-template-columns:repeat(3,1fr);}}
     .vc{background:linear-gradient(135deg,rgba(0,137,123,0.05),rgba(0,77,64,0.03));border:1px solid rgba(0,137,123,0.14);border-radius:18px;padding:24px 20px;transition:all 0.3s;}
     .vc:hover{background:linear-gradient(135deg,rgba(0,137,123,0.1),rgba(0,77,64,0.06));transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,137,123,0.12);}
     .vci{font-size:1.8rem;margin-bottom:10px;display:block;}
@@ -116,43 +111,33 @@ export default function About() {
 
     /* FOUNDER */
     .fc{background:#fff;border-radius:28px;padding:44px 36px;margin-bottom:28px;border:1px solid rgba(0,137,123,0.12);box-shadow:0 8px 36px rgba(0,77,64,0.07);display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;position:relative;overflow:hidden;}
-    @media(max-width:600px){.fc{padding:32px 20px;border-radius:20px;gap:18px;}}
     .fc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#00897b,#004d40,#26a69a,#00897b);background-size:200%;animation:sbar 3s linear infinite;}
     .fiw{position:relative;display:inline-block;}
     .fiw::before{content:'';position:absolute;inset:-5px;border-radius:50%;background:conic-gradient(#00897b,#004d40,#26a69a,#80cbc4,#00897b);z-index:0;animation:spin 6s linear infinite;}
     @keyframes spin{to{transform:rotate(360deg)}}
     .fiw::after{content:'';position:absolute;inset:-2px;border-radius:50%;background:#fff;z-index:1;}
     .fi{position:relative;z-index:2;width:170px;height:170px;border-radius:50%;object-fit:cover;border:4px solid #fff;display:block;}
-    @media(max-width:600px){.fi{width:130px;height:130px;}}
     .ftag{display:inline-block;background:linear-gradient(135deg,rgba(0,137,123,0.1),rgba(0,77,64,0.06));border:1px solid rgba(0,137,123,0.22);color:#00897b;font-size:0.72rem;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;}
     .fn{font-size:1.5rem;font-weight:800;color:#004d40;letter-spacing:-0.025em;margin-bottom:14px;}
-    @media(max-width:600px){.fn{font-size:1.3rem;margin-bottom:10px;}}
     .ft{color:#525252;font-size:0.97rem;line-height:1.85;font-style:italic;max-width:660px;}
-    @media(max-width:600px){.ft{font-size:0.9rem;line-height:1.6;}}
 
     /* TIMELINE */
     .tl{position:relative;padding-left:32px;margin-top:8px;}
-    @media(max-width:600px){.tl{padding-left:24px;}}
     .tl::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#00897b,#004d40,rgba(0,77,64,0));}
-    @media(max-width:600px){.tl::before{left:6px;}}
     .ti{position:relative;margin-bottom:36px;}
     .ti:last-child{margin-bottom:0;}
     .tidot{position:absolute;left:-26px;top:4px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#00897b,#004d40);border:3px solid #fff;box-shadow:0 0 10px rgba(0,137,123,0.5);}
-    @media(max-width:600px){.tidot{left:-21px;width:12px;height:12px;top:5px;}}
     .tiyr{font-size:0.72rem;font-weight:800;color:#00897b;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
     .tilb{font-size:1.05rem;font-weight:800;color:#004d40;margin-bottom:4px;letter-spacing:-0.01em;}
     .tidx{font-size:0.9rem;color:#737373;line-height:1.65;}
-    @media(max-width:600px){.tilb{font-size:1rem;} .tidx{font-size:0.85rem;line-height:1.5;}}
 
     /* VM */
     .vml{list-style:none;display:flex;flex-direction:column;gap:20px;}
     .vmi{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:14px;background:rgba(0,137,123,0.03);border:1px solid rgba(0,137,123,0.1);transition:all 0.25s;}
-    @media(max-width:600px){.vmi{padding:16px 14px;gap:12px;}}
     .vmi:hover{background:rgba(0,137,123,0.07);transform:translateX(4px);}
     .vmd{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#00897b,#004d40);flex-shrink:0;margin-top:6px;box-shadow:0 0 8px rgba(0,137,123,0.5);}
     .vmlb{font-weight:800;color:#004d40;display:block;margin-bottom:5px;font-size:1rem;}
     .vmtx{color:#525252;font-size:0.93rem;line-height:1.75;}
-    @media(max-width:600px){.vmtx{font-size:0.9rem;line-height:1.6;}}
 
     /* FOOTER */
     .ft2{background:linear-gradient(135deg,#002b24,#004d40);color:rgba(255,255,255,0.65);text-align:center;padding:36px 16px;font-size:0.875rem;position:relative;}
@@ -216,7 +201,7 @@ export default function About() {
 
             {/* STATS */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={d(0.1)} className="sg">
-              {[["2026","Established"],["500+","Projects Delivered"],["15+","Years of Legacy"],].map(([v,l])=>(
+              {[["2026", "Established"], ["500+", "Projects Delivered"], ["15+", "Years of Legacy"],].map(([v, l]) => (
                 <div key={l} className="sc2"><span className="sv">{v}</span><span className="sl">{l}</span></div>
               ))}
             </motion.div>
