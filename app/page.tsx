@@ -145,7 +145,7 @@ export default function Home() {
     top:0;
     left:0;
     right:0;
-    z-index:100;
+    z-index:2000;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -215,29 +215,105 @@ export default function Home() {
     gap:4px;
   }
 
-  @media(max-width:767px){
-    .nav-links{ display:none; }
-    .hamburger-btn{ display:block; }
+ @media(max-width:767px){
+
+  .nav-links{
+    display:none;
   }
 
-  .hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    padding: 4px;
-    margin-left: 8px;
+  .hamburger-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
-  .navbar.top .hamburger-btn {
-    color: #fff;
+
+  .nav-con{
+    padding:0 16px;
+    height:64px;
   }
+
+  .logo-img{
+    width:40px;
+    height:40px;
+  }
+
+  .logo-txt{
+    font-size:1rem;
+  }
+}
+
+/* HAMBURGER BUTTON */
+
+.hamburger-btn{
+  background:none;
+  border:none;
+  outline:none;
+  cursor:pointer;
+  padding:6px;
+  margin-left:8px;
+  border-radius:8px;
+  align-items:center;
+  justify-content:center;
+  transition:all 0.25s ease;
+  z-index:1200;
+
+  /* DESKTOP HIDE */
+  display:none;
+}
+
+.hamburger-btn:hover{
+  background:rgba(255,255,255,0.08);
+}
+
+.hamburger-btn svg{
+  width:26px;
+  height:26px;
+}
+
+.navbar.top .hamburger-btn{
+  color:#fff;
+}
+
+.navbar.scrolled .hamburger-btn{
+  color:#004d40;
+}
+
+/* MOBILE */
+
+@media(max-width:767px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hamburger-btn{
+    display:flex !important;
+  }
+
+  .nav-con{
+    padding:0 16px;
+    height:64px;
+  }
+
+  .logo-img{
+    width:40px;
+    height:40px;
+  }
+
+  .logo-txt{
+    font-size:1rem;
+  }
+
+  .btn-p{
+    display:none;
+  }
+}
 
   .mobile-menu-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.5);
-    z-index: 1000;
+    z-index: 2500;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -247,21 +323,24 @@ export default function Home() {
     pointer-events: all;
   }
   .mobile-menu-content {
-    position: fixed;
-    top: 0; right: -280px;
-    width: 280px; height: 100%;
+     position:fixed;
+  top:0;
+  right:-320px;
+  width:300px;
+  max-width:82%;
+  height:100vh;
     background: #fff;
-    z-index: 1001;
+    z-index: 2600;
     padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:right 0.35s cubic-bezier(0.4,0,0.2,1);
     box-shadow: -4px 0 24px rgba(0,0,0,0.1);
   }
-  .mobile-menu-content.open {
-    transform: translateX(-280px);
-  }
+  .mobile-menu-content.open{
+  right:0;
+}
   .mobile-menu-header {
     display: flex;
     justify-content: space-between;
@@ -316,7 +395,7 @@ export default function Home() {
     border-radius:999px;
     transform:scaleX(0);
     transform-origin:left;
-    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);
   }
 
   .nav-lk:hover{
@@ -594,9 +673,13 @@ export default function Home() {
                 <UserButton />
               </Show>
 
-              <button className="hamburger-btn" onClick={() => setMobileMenuOpen(true)}>
-                <Menu size={24} />
-              </button>
+              <button
+  className="hamburger-btn"
+  onClick={() => setMobileMenuOpen(true)}
+  aria-label="Open Menu"
+>
+  <Menu size={26} />
+</button>
             </div>
           </div>
         </nav>
