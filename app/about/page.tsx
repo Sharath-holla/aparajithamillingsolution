@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { SignInButton, Show, UserButton } from "@clerk/nextjs";
 import { motion, type Variants } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 
 export default function About() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", h);
@@ -50,7 +52,16 @@ export default function About() {
     .lt{font-weight:800;font-size:1.15rem;letter-spacing:-0.03em;background:linear-gradient(135deg,#004d40,#00897b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .nr{display:flex;align-items:center;gap:12px;}
     .nl{display:none;align-items:center;gap:4px;}
-    @media(min-width:768px){.nl{display:flex;}}
+    .hmb{display:block;background:none;border:none;color:#333;cursor:pointer;padding:4px;margin-left:8px;}
+    @media(min-width:768px){.nl{display:flex;} .hmb{display:none;}}
+
+    .mbo{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:1000;opacity:0;pointer-events:none;transition:opacity 0.3s ease;}
+    .mbo.open{opacity:1;pointer-events:all;}
+    .mbc{position:fixed;top:0;right:-280px;width:280px;height:100%;background:#fff;z-index:1001;padding:24px;display:flex;flex-direction:column;gap:16px;transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);box-shadow:-4px 0 24px rgba(0,0,0,0.1);}
+    .mbc.open{transform:translateX(-280px);}
+    .mbh{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;}
+    .mbcb{background:none;border:none;cursor:pointer;color:#333;padding:4px;}
+    .mbnk{color:#333;text-decoration:none;font-size:1.1rem;font-weight:500;padding:12px 0;border-bottom:1px solid #f0f0f0;}
     .nk{position:relative;text-decoration:none;color:#404040;font-size:0.875rem;font-weight:500;padding:8px 14px;border-radius:8px;transition:color 0.25s,background 0.25s;}
     .nk::after{content:'';position:absolute;bottom:4px;left:14px;right:14px;height:2px;background:linear-gradient(90deg,#00897b,#004d40);border-radius:999px;transform:scaleX(0);transform-origin:left;transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);}
     .nk:hover{color:#00897b;background:rgba(0,137,123,0.06);}
@@ -155,9 +166,26 @@ export default function About() {
                 <SignInButton mode="modal"><button className="bp">Login</button></SignInButton>
               </Show>
               <Show when="signed-in"><UserButton /></Show>
+              <button className="hmb" onClick={() => setMobileMenuOpen(true)}>
+                <Menu size={24} />
+              </button>
             </div>
           </div>
         </nav>
+
+        {/* Mobile Menu */}
+        <div className={`mbo ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)} />
+        <div className={`mbc ${mobileMenuOpen ? 'open' : ''}`}>
+          <div className="mbh">
+            <span className="lt" style={{ color: '#004d40' }}>APARAJITHA</span>
+            <button className="mbcb" onClick={() => setMobileMenuOpen(false)}>
+              <X size={24} />
+            </button>
+          </div>
+          <Link href="/#services" className="mbnk" onClick={() => setMobileMenuOpen(false)}>What We Do</Link>
+          <Link href="/products" className="mbnk" onClick={() => setMobileMenuOpen(false)}>Products</Link>
+          <Link href="/#contact" className="mbnk" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        </div>
 
         <section className="sm">
           <div className="si">

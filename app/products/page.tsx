@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { SignInButton, Show, UserButton } from "@clerk/nextjs";
 import { motion, type Variants } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -43,10 +43,10 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
       {/* Navigation buttons */}
       <button className="slider-btn prev" onClick={prevSlide} aria-label="Previous">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
       </button>
       <button className="slider-btn next" onClick={nextSlide} aria-label="Next">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
       </button>
 
       {/* Thumbnail dots */}
@@ -69,19 +69,19 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
 export default function Products() {
   const fadeUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeInOut" as const,
+    hidden: {
+      opacity: 0,
+      y: 30,
     },
-  },
-};
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut" as const,
+      },
+    },
+  };
 
   // --- PRODUCT DATA ---
   const productsData = [
@@ -89,7 +89,7 @@ export default function Products() {
       title: "Bucket Elevators for Rice & Dal Mills",
       images: [
         "/e.jpeg",
-        "/e1.jpeg"  
+        "/e1.jpeg"
       ],
       details: {
         "Application": "Designed for efficient vertical conveying of rice, dal, paddy, pulses, and other granular materials in rice mills, dal mills, and agro-processing plants.",
@@ -185,70 +185,70 @@ export default function Products() {
         "Key Benefits": "Robust construction, reliable storage, easy maintenance, and optimized material handling performance."
       }
     },
-{
-  title: "Spouting & Ducting Systems",
-  images: [
-    "/spout1.jpeg",
-    "/spout2.jpeg",
-    "/spout3.jpeg",
-    "/spout4.jpg",
-    "/spout5.jpg",
-    "/spout6.jpg"
-  ],
-  details: {
-    "Application": "Designed for efficient transfer of rice, paddy, dal, husk, bran, and other materials between processing machines in rice mills, dal mills, and agro-processing plants.",
-    "Capacity Range": "Custom-designed to handle varying plant capacities from small-scale units to large industrial processing systems.",
-    "Design Features": "Engineered using advanced 3D drafting technology for accurate routing, smooth material flow, reduced pressure loss, and optimized plant layout integration.",
-    "Construction": "Manufactured using premium-quality galvanized steel, mild steel, or stainless steel sheets with precision bends and leak-proof joints.",
-    "Performance": "Ensures smooth and dust-free material movement with minimal blockage, low maintenance, and high operational efficiency.",
-    "Optional Features": "Can be equipped with inspection doors, transparent viewing sections, quick-access cleaning ports, and anti-static coating systems.",
-    "Customization": "Fully customized according to plant structure, conveying distance, machine arrangement, and customer requirements.",
-    "Industries Served": "Rice Mills, Dal Mills, Flour Mills, Grain Handling Units, Feed Plants, and Agro-Processing Industries.",
-    "Key Benefits": "Efficient material flow, reduced material loss, compact installation, long service life, and improved plant hygiene."
-  }
-},
-{
-  title: "Centrifugal Fans",
-  images: [
-    "/fans1.jpeg",
-    "/fans2.jpeg",
-    "/fans3.jpeg",
-  ],
-  details: {
-    "Application": "Designed for air handling, dust collection, ventilation, pneumatic conveying, and aspiration systems in rice mills, dal mills, and industrial processing plants.",
-    "Capacity Range": "Available in multiple airflow capacities and pressure ranges to suit different industrial applications.",
-    "Design Features": "Aerodynamically designed impellers ensure high airflow efficiency, low vibration, reduced noise levels, and stable operation.",
-    "Construction": "Fabricated using heavy-duty steel construction with dynamically balanced impellers, robust housings, and high-quality bearings.",
-    "Performance": "Provides powerful and consistent airflow with energy-efficient operation and reliable long-term performance.",
-    "Control & Safety Features": "Equipped with vibration-resistant mounting systems, overload protection compatibility, and precision-balanced rotating components.",
-    "Customization": "Available in direct-drive and belt-drive configurations with customized motor capacities and airflow specifications.",
-    "Industries Served": "Rice Mills, Dal Mills, Flour Mills, Dust Collection Systems, Food Processing Units, and General Industrial Plants.",
-    "Key Benefits": "High efficiency, low maintenance, reduced energy consumption, smooth airflow, and durable industrial-grade performance."
-  }
-},
-{
-  title: "Cyclone Magnets",
-  images: [
-    "/mag1.jpeg",
-    "/mag2.jpeg",
-    "/mag3.jpeg",
-    "/mag5.jpg"
-  ],
-  details: {
-    "Application": "Designed for removing ferrous impurities, dust particles, and unwanted contaminants from grains, rice, dal, and other bulk materials during processing.",
-    "Capacity Range": "Available in multiple sizes and magnetic strengths suitable for different plant capacities and material flow rates.",
-    "Design Features": "Incorporates high-intensity magnetic separation technology combined with cyclone-based dust separation for enhanced purification efficiency.",
-    "Construction": "Manufactured using durable steel structures with powerful permanent magnets and precision-engineered cyclone chambers.",
-    "Performance": "Effectively separates iron particles, metallic contaminants, and airborne dust while maintaining smooth material flow.",
-    "Optional Features": "Can be integrated with dust collection systems, inspection chambers, and easy-clean magnetic access mechanisms.",
-    "Customization": "Tailor-made according to processing capacity, material type, and specific customer operational requirements.",
-    "Industries Served": "Rice Mills, Dal Mills, Flour Mills, Food Processing Units, Grain Cleaning Plants, and Agro Industries.",
-    "Key Benefits": "Improved product purity, enhanced machinery protection, reduced contamination risk, low maintenance, and reliable operation."
-  }
-},
+    {
+      title: "Spouting & Ducting Systems",
+      images: [
+        "/spout1.jpeg",
+        "/spout2.jpeg",
+        "/spout4.jpg",
+        "/spout5.jpg",
+        "/spout6.jpg",
+      ],
+      details: {
+        "Application": "Designed for efficient transfer of rice, paddy, dal, husk, bran, and other materials between processing machines in rice mills, dal mills, and agro-processing plants.",
+        "Capacity Range": "Custom-designed to handle varying plant capacities from small-scale units to large industrial processing systems.",
+        "Design Features": "Engineered using advanced 3D drafting technology for accurate routing, smooth material flow, reduced pressure loss, and optimized plant layout integration.",
+        "Construction": "Manufactured using premium-quality galvanized steel, mild steel, or stainless steel sheets with precision bends and leak-proof joints.",
+        "Performance": "Ensures smooth and dust-free material movement with minimal blockage, low maintenance, and high operational efficiency.",
+        "Optional Features": "Can be equipped with inspection doors, transparent viewing sections, quick-access cleaning ports, and anti-static coating systems.",
+        "Customization": "Fully customized according to plant structure, conveying distance, machine arrangement, and customer requirements.",
+        "Industries Served": "Rice Mills, Dal Mills, Flour Mills, Grain Handling Units, Feed Plants, and Agro-Processing Industries.",
+        "Key Benefits": "Efficient material flow, reduced material loss, compact installation, long service life, and improved plant hygiene."
+      }
+    },
+    {
+      title: "Centrifugal Fans",
+      images: [
+        "/fans1.jpeg",
+        "/fans2.jpeg",
+        "/fans3.jpeg",
+      ],
+      details: {
+        "Application": "Designed for air handling, dust collection, ventilation, pneumatic conveying, and aspiration systems in rice mills, dal mills, and industrial processing plants.",
+        "Capacity Range": "Available in multiple airflow capacities and pressure ranges to suit different industrial applications.",
+        "Design Features": "Aerodynamically designed impellers ensure high airflow efficiency, low vibration, reduced noise levels, and stable operation.",
+        "Construction": "Fabricated using heavy-duty steel construction with dynamically balanced impellers, robust housings, and high-quality bearings.",
+        "Performance": "Provides powerful and consistent airflow with energy-efficient operation and reliable long-term performance.",
+        "Control & Safety Features": "Equipped with vibration-resistant mounting systems, overload protection compatibility, and precision-balanced rotating components.",
+        "Customization": "Available in direct-drive and belt-drive configurations with customized motor capacities and airflow specifications.",
+        "Industries Served": "Rice Mills, Dal Mills, Flour Mills, Dust Collection Systems, Food Processing Units, and General Industrial Plants.",
+        "Key Benefits": "High efficiency, low maintenance, reduced energy consumption, smooth airflow, and durable industrial-grade performance."
+      }
+    },
+    {
+      title: "Cyclone Magnets",
+      images: [
+        "/mag1.jpeg",
+        "/mag2.jpeg",
+        "/mag3.jpeg",
+        "/mag5.jpg"
+      ],
+      details: {
+        "Application": "Designed for removing ferrous impurities, dust particles, and unwanted contaminants from grains, rice, dal, and other bulk materials during processing.",
+        "Capacity Range": "Available in multiple sizes and magnetic strengths suitable for different plant capacities and material flow rates.",
+        "Design Features": "Incorporates high-intensity magnetic separation technology combined with cyclone-based dust separation for enhanced purification efficiency.",
+        "Construction": "Manufactured using durable steel structures with powerful permanent magnets and precision-engineered cyclone chambers.",
+        "Performance": "Effectively separates iron particles, metallic contaminants, and airborne dust while maintaining smooth material flow.",
+        "Optional Features": "Can be integrated with dust collection systems, inspection chambers, and easy-clean magnetic access mechanisms.",
+        "Customization": "Tailor-made according to processing capacity, material type, and specific customer operational requirements.",
+        "Industries Served": "Rice Mills, Dal Mills, Flour Mills, Food Processing Units, Grain Cleaning Plants, and Agro Industries.",
+        "Key Benefits": "Improved product purity, enhanced machinery protection, reduced contamination risk, low maintenance, and reliable operation."
+      }
+    },
   ];
 
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -263,91 +263,58 @@ export default function Products() {
     html, body { overflow-x: hidden; width: 100%; }
     html { scroll-behavior: smooth; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
     .page-wrapper { min-height: 100vh; background: linear-gradient(160deg, #f0fdf8 0%, #e8f5f2 30%, #ffffff 60%); color: #171717; overflow-x: hidden; }
-
-    /* ===== PREMIUM NAVBAR ===== */
+    /* ===== NAVBAR ===== */
     .navbar {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 50;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .navbar.scrolled {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border-bottom: 1px solid rgba(0, 137, 123, 0.12);
-      box-shadow: 0 4px 24px rgba(0, 77, 64, 0.08);
+      border-bottom: 1px solid rgba(0,137,123,0.15);
+      box-shadow: 0 4px 30px rgba(0,77,64,0.06);
     }
     .navbar.top {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(229, 229, 229, 0.4);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229,229,229,0.5);
     }
     .nav-container {
-      max-width: 1280px; margin: 0 auto;
-      padding: 0 24px; height: 72px;
+      max-width: 1400px; margin: 0 auto; padding: 0 32px; height: 80px;
       display: flex; align-items: center; justify-content: space-between;
     }
-
-    /* Logo */
     .logo-group {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-      transition: transform 0.2s ease;
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; transition: transform 0.2s ease;
     }
     .logo-group:hover { transform: scale(1.02); }
-    .logo-img { height: 44px; width: auto; object-fit: contain; display: block; }
+    .logo-img { width: 50px; height: 50px; object-fit: contain; }
     .logo-text {
-      font-weight: 800; font-size: 1.1rem;
-      color: #004d40; letter-spacing: -0.03em;
+      font-size: 1.25rem; font-weight: 800; color: #004d40;
+      letter-spacing: -0.02em; transition: all 0.3s ease;
       background: linear-gradient(135deg, #004d40, #00897b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-
-    /* Nav Right Group */
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    /* Nav Links */
-    .nav-links {
-      display: none;
-      align-items: center;
-      gap: 4px;
-    }
-    @media (min-width: 768px) {
-      .nav-links { display: flex; }
-      .logo-text { font-size: 1.2rem; }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .hamburger-btn { display: none; background: none; border: none; color: #004d40; cursor: pointer; padding: 4px; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger-btn { display: block; }
     }
     .nav-link {
-      position: relative;
-      text-decoration: none;
-      color: #404040;
-      font-size: 0.875rem;
-      font-weight: 500;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: color 0.25s ease, background 0.25s ease;
-      letter-spacing: 0.01em;
+      color: #333; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      padding: 10px 16px; border-radius: 8px; letter-spacing: 0.01em;
+      transition: all 0.25s ease; position: relative;
     }
     .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: 4px; left: 14px; right: 14px;
-      height: 2px;
-      background: linear-gradient(90deg, #00897b, #004d40);
-      border-radius: 999px;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      content: ''; position: absolute; bottom: 6px; left: 16px; right: 16px;
+      height: 2px; background: linear-gradient(90deg, #00897b, #004d40);
+      border-radius: 999px; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
     }
-    .nav-link:hover { color: #00897b; background: rgba(0, 137, 123, 0.06); }
+    .nav-link:hover { color: #00897b; background: rgba(0,137,123,0.06); }
     .nav-link:hover::after { transform: scaleX(1); }
-
     /* Nav right actions */
     .nav-actions {
       display: flex; align-items: center; gap: 10px;
@@ -597,13 +564,30 @@ export default function Products() {
                   <UserButton></UserButton>
                 </Show>
               </div>
+              <button className="hamburger-btn" onClick={() => setMobileMenuOpen(true)}>
+                <Menu size={24} />
+              </button>
             </div>
           </div>
         </nav>
 
+        {/* Mobile Menu */}
+        <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)} />
+        <div className={`mobile-menu-content ${mobileMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-menu-header">
+            <span className="logo-text">APARAJITHA</span>
+            <button className="close-btn" onClick={() => setMobileMenuOpen(false)}>
+              <X size={24} />
+            </button>
+          </div>
+          <Link href="/about" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+          <Link href="/#services" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>What We Do</Link>
+          <Link href="/#contact" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        </div>
+
         <section className="section-light">
           <div className="section-inner">
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} style={{textAlign:"center"}}>
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} style={{ textAlign: "center" }}>
               <div className="hero-badge"><span className="hero-badge-dot" /> Our Product Range</div>
               <h1 className="page-title">Premium Industrial Solutions</h1>
               <p className="page-subtitle">
@@ -613,16 +597,16 @@ export default function Products() {
 
             {/* MAP OVER ALL PRODUCTS */}
             {productsData.map((product, idx) => (
-              <motion.div 
-                key={idx} 
-                initial="hidden" 
-                whileInView="visible" 
-                viewport={{ once: true, margin: "-50px" }} 
-                variants={fadeUp} 
+              <motion.div
+                key={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={fadeUp}
                 className="product-section"
               >
                 <h2 className="product-title">{product.title}</h2>
-                
+
                 {/* 4-Image Slider */}
                 <ImageSlider images={product.images} />
 

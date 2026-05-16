@@ -9,6 +9,8 @@ import {
   Phone,
   Mail,
   MapPin,
+  Menu,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -71,6 +73,7 @@ const stagger: Variants = {
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20);
@@ -214,6 +217,71 @@ export default function Home() {
 
   @media(max-width:767px){
     .nav-links{ display:none; }
+    .hamburger-btn{ display:block; }
+  }
+
+  .hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 8px;
+  }
+  .navbar.top .hamburger-btn {
+    color: #fff;
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .mobile-menu-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .mobile-menu-content {
+    position: fixed;
+    top: 0; right: -280px;
+    width: 280px; height: 100%;
+    background: #fff;
+    z-index: 1001;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+  }
+  .mobile-menu-content.open {
+    transform: translateX(-280px);
+  }
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    padding: 4px;
+  }
+  .mobile-nav-lk {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
   }
 
   .nav-lk{
@@ -525,9 +593,28 @@ export default function Home() {
               <Show when="signed-in">
                 <UserButton />
               </Show>
+
+              <button className="hamburger-btn" onClick={() => setMobileMenuOpen(true)}>
+                <Menu size={24} />
+              </button>
             </div>
           </div>
         </nav>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(false)} />
+        <div className={`mobile-menu-content ${mobileMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-menu-header">
+            <span className="logo-txt" style={{ color: '#004d40' }}>APARAJITHA</span>
+            <button className="close-btn" onClick={() => setMobileMenuOpen(false)}>
+              <X size={24} />
+            </button>
+          </div>
+          <Link href="/about" className="mobile-nav-lk" onClick={() => setMobileMenuOpen(false)}>About</Link>
+          <Link href="/products" className="mobile-nav-lk" onClick={() => setMobileMenuOpen(false)}>Products</Link>
+          <Link href="/#services" className="mobile-nav-lk" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/#contact" className="mobile-nav-lk" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+        </div>
 
         {/* HERO */}
         <section className="hero">
