@@ -578,7 +578,7 @@ export default function Products() {
         <nav className={`navbar ${scrolled ? "scrolled" : "top"}`}>
           <div className="nav-container">
             <Link href="/" className="logo-group">
-              <img src="/logoPNG.png" alt="Aparajitha Milling Logo" className="logo-img" />
+              <img src="/logoPNG.PNG" alt="Aparajitha Milling Logo" className="logo-img" />
               <span className="logo-text">APARAJITHA</span>
             </Link>
             <div className="nav-right">
