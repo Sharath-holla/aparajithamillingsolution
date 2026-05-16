@@ -578,7 +578,7 @@ export default function Home() {
 
         <section id="services" className="sec-services">
           <div className="sec-inner">
-            <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="sec-badge"><span className="sec-badge-dot" /> What We Do</div>
               <h2 className="sec-title">Built For Performance.<br />Engineered To Last.</h2>
               <p className="sec-sub">Our advanced manufacturing infrastructure delivers innovative engineering solutions for modern agro-processing industries.</p>
@@ -641,11 +641,11 @@ export default function Home() {
 
               <div className="cert-card">
                 <div className="cert-badge">✓ ISO 9001:2015 Certified</div>
-                <h2 style={{fontSize:'1.6rem',fontWeight:900,marginBottom:'16px',letterSpacing:'-0.02em'}}>Engineering Excellence</h2>
-                <p style={{color:'rgba(255,255,255,0.75)',lineHeight:1.8,marginBottom:'28px'}}>Delivering precision, durability, reliability, and superior customer satisfaction across every project we undertake.</p>
-                <div style={{display:'flex',alignItems:'center',gap:'14px'}}>
+                <h2 style={{ fontSize: '1.6rem', fontWeight: 900, marginBottom: '16px', letterSpacing: '-0.02em' }}>Engineering Excellence</h2>
+                <p style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, marginBottom: '28px' }}>Delivering precision, durability, reliability, and superior customer satisfaction across every project we undertake.</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                   <Factory color="#80cbc4" size={34} />
-                  <div><h3 style={{fontWeight:800,letterSpacing:'-0.01em'}}>APARAJITHA</h3><p style={{color:'rgba(255,255,255,0.6)',fontSize:'0.85rem'}}>Milling Solutions</p></div>
+                  <div><h3 style={{ fontWeight: 800, letterSpacing: '-0.01em' }}>APARAJITHA</h3><p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>Milling Solutions</p></div>
                 </div>
               </div>
             </div>
