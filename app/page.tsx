@@ -9,7 +9,6 @@ import {
   Phone,
   Mail,
   MapPin,
-  ArrowUpRight,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -558,16 +557,16 @@ export default function Home() {
         </section>
 
         {/* STATS STRIP */}
-        <motion.div className="stats-strip" initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.6}}>
+        <section className="stats-strip">
           <div className="stats-inner">
-            {stats.map((s,i)=>(
-              <motion.div key={i} className="stat-item" initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.5,delay:i*0.1}}>
-                <span className="stat-num">{s.num}</span>
-                <span className="stat-lbl">{s.lbl}</span>
-              </motion.div>
+            {stats.map((st, i) => (
+              <div key={i} className="stat-item">
+                <span className="stat-num">{st.num}</span>
+                <span className="stat-lbl">{st.lbl}</span>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </section>
 
         {/* SERVICES */}
 
@@ -599,7 +598,7 @@ export default function Home() {
 
                   <div className="svc-body">
                     <div className="svc-title">
-                      {s.icon} {s.title}
+                      {s.title}
                     </div>
 
                     <div className="svc-desc">{s.desc}</div>
