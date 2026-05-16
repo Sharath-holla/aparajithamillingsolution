@@ -69,9 +69,19 @@ const ImageSlider = ({ images }: { images: string[] }) => {
 
 export default function Products() {
   const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
+};
 
   // --- PRODUCT DATA ---
   const productsData = [
