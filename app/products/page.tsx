@@ -78,7 +78,7 @@ export default function Products() {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
     },
   },
 };
