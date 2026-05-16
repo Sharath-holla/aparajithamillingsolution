@@ -84,9 +84,6 @@ export default function Home() {
   }, []);
 
   const heroImages = [
-    "/back2.jpeg",
-    "/back1.jpeg",
-    "/back3.jpeg",
     "/back4.jpeg",
     "/back5.jpeg",
   ];
